@@ -10,5 +10,5 @@ export const getTypeOrmConfig = (configService: ConfigService): TypeOrmModuleOpt
   database: configService.get('DB_DATABASE', 'helpdesk_form'),
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
   synchronize: configService.get('NODE_ENV') !== 'production', // Is not used in production
-  logging: configService.get('NODE_ENV') !== 'production',
+  logging: false,
 });
