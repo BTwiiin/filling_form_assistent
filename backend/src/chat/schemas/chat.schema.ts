@@ -16,36 +16,35 @@ export const chatResponseSchema = {
     },
     formData: {
       type: Type.OBJECT,
-      description: 'The collected form data, only present when status is "complete"',
+      description: 'The collected form data, can be partial during collection',
       nullable: true,
       properties: {
         firstname: {
           type: Type.STRING,
           description: 'User\'s first name',
-          nullable: false,
+          nullable: true,
         },
         lastname: {
           type: Type.STRING,
           description: 'User\'s last name',
-          nullable: false,
+          nullable: true,
         },
         email: {
           type: Type.STRING,
           description: 'User\'s email address',
-          nullable: false,
+          nullable: true,
         },
         reason: {
           type: Type.STRING,
           description: 'Reason for contacting helpdesk',
-          nullable: false,
+          nullable: true,
         },
         urgency: {
           type: Type.NUMBER,
           description: 'Urgency level from 1 to 10',
-          nullable: false,
+          nullable: true,
         },
       },
-      required: ['firstname', 'lastname', 'email', 'reason', 'urgency'],
     },
     missingFields: {
       type: Type.ARRAY,

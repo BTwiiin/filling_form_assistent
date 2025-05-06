@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as cookieParser from 'cookie-parser';
 import { ValidationPipe } from '@nestjs/common';
+import { LoggingInterceptor } from './interceptors/logging.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -17,6 +18,9 @@ async function bootstrap() {
       forbidNonWhitelisted: true, // Throw errors if non-whitelisted properties are present
     }),
   );
+
+  // Add global logging interceptor
+  app.useGlobalInterceptors(new LoggingInterceptor());
 
   // Enabling CORS
   app.enableCors({
