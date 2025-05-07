@@ -20,6 +20,7 @@ cd filling_form_assistent
 2. Set up your Google Gemini API key:
    - Open `docker-compose.yml`
    - Find the `GEMINI_API_KEY` environment variable in the backend service
+   - [Link to Generate GEMINI_API_KEY](https://aistudio.google.com/apikey)
    - Replace the placeholder value with your actual API key
 
 3. Start the application using Docker Compose:
